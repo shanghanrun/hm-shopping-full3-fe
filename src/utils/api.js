@@ -1,8 +1,8 @@
 import axios from "axios";
 // 상황따라 주소 다름
-const BACKEND_URL = process.env.REACT_APP_BACKEND_PROXY+'/api'; //netlify redirect용
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_PROXY+'/api'; //netlify redirect용
 
-// const BACKEND_URL = process.env.REACT_APP_LOCAL_BACKEND+'/api';
+const BACKEND_URL = process.env.REACT_APP_LOCAL_BACKEND+'/api';
 
 const api = axios.create({
   baseURL: BACKEND_URL,
