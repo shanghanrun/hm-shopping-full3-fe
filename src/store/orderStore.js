@@ -27,8 +27,8 @@ const orderStore =create((set, get)=>({
 			set({selectedOrder: resp.data.updatedOrder})
 
 		}catch(e){
-			console.log(e.message)
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log(e.error)
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 
@@ -47,8 +47,8 @@ const orderStore =create((set, get)=>({
 			navigate('/payment/success')
 			
 		}catch(e){
-			console.log(e.message)
-			uiStore.getState().showToastMessage(e.message, 'error'); 
+			console.log(e.error)
+			uiStore.getState().showToastMessage(e.error, 'error'); 
 		}
 	},
 
@@ -67,8 +67,8 @@ const orderStore =create((set, get)=>({
 				totalPageNum: resp.data.totalPageNum
 			})	
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
+			console.log('e.error:', e.error)
+			set({error: e.error})
 		}
 	},
 	getAllUserOrderList:async(searchQuery)=>{  // admin에서 필요한 것
@@ -84,8 +84,8 @@ const orderStore =create((set, get)=>({
 				totalCount: resp.data.totalCount
 			})	
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
+			console.log('e.error:', e.error)
+			set({error: e.error})
 		}
 	}
 }))

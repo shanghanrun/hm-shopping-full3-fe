@@ -22,8 +22,8 @@ const userStore =create((set,get)=>({
 			const u = await resp.data.user
 			set({user: u})
 		} catch(e){
-			console.log('e.message:', e.message)
-			// set({error:e.message}) 이걸 안해야 Login페이지에 쓸데없는 에러메시지가 안나온다.
+			console.log('e.error:', e.error)
+			// set({error:e.error}) 이걸 안해야 Login페이지에 쓸데없는 에러메시지가 안나온다.
 			set({error: ''})
 			// this.logout()  zustand this사용 못한다.
 			// invalid한 토큰삭제,user null로
@@ -62,9 +62,9 @@ const userStore =create((set,get)=>({
 			set({user: u })
 			sessionStorage.setItem('token',t)
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 	registerUser: async({name,email,password}, navigate)=>{
@@ -78,7 +78,7 @@ const userStore =create((set,get)=>({
 			navigate('/login')
 
 		}catch(e){
-			console.log(e.message)
+			console.log(e.error)
 			uiStore.getState().showToastMessage('회원가입실패','error')
 		}
 	},

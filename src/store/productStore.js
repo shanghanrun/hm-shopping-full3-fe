@@ -40,9 +40,9 @@ const productStore =create((set,get)=>({
 			set({
 				productList: [...list],    	initialProductList:[...list]})	
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			// uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			// uiStore.getState().showToastMessage(e.error, 'error');
 			// payment페이지처럼 페이지네이션 안된 곳에서 에러메시지 안나오도록
 		}
 	},
@@ -67,9 +67,9 @@ const productStore =create((set,get)=>({
 			//이렇게 productList를 업데이트하면, 새로만든 물폼이 화면에 반영된다.
 
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 	batchCreateProducts:async(formData,navigate)=>{
@@ -89,9 +89,9 @@ const productStore =create((set,get)=>({
 			//이렇게 productList를 업데이트하면, 새로만든 물폼이 화면에 반영된다.
 
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 	setSelectedProduct:(product)=>{
@@ -121,9 +121,9 @@ const productStore =create((set,get)=>({
 			//이렇게 하면, 페이지가 열리면서 자연스럽게 새로운 productList를 받아오게 된다.
 
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 	deleteProduct:async(id,navigate)=>{
@@ -141,9 +141,9 @@ const productStore =create((set,get)=>({
 			//이렇게 하면, 페이지가 열리면서 자연스럽게 새로운 productList를 받아오게 된다.
 
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 	getProduct:async(id)=>{
@@ -158,9 +158,9 @@ const productStore =create((set,get)=>({
 			// navigate('/product/'+id) 현재페이지 url이 바뀔 필요없다.
 
 		}catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	}
 }))
