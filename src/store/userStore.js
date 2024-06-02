@@ -43,9 +43,9 @@ const userStore =create((set,get)=>({
 			set({user: u })
 			sessionStorage.setItem('token',t)
 		} catch(e){
-			console.log('e.message:', e.message)
-			set({error: e.message})
-			uiStore.getState().showToastMessage(e.message, 'error');
+			console.log('e.error:', e.error)
+			set({error: e.error})
+			uiStore.getState().showToastMessage(e.error, 'error');
 		}
 	},
 	logout:()=> {   
